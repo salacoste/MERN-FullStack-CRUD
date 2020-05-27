@@ -7,7 +7,7 @@ const CONTACTS = [{
   id:1,
   name: 'test',
   phone: '912929',
-  marked: false 
+  marked: false
 }]
 
 app.use(express.static(path.resolve(__dirname)))
