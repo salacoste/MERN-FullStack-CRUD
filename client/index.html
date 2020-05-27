@@ -1,0 +1,70 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="../node_modules/shards-ui/dist/css/shards.css">
+
+  <title>MERN</title>
+
+  <style>
+    [v-cloak] {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container pt-3" id="app" v-cloak>
+    <h1>MERN Application</h1>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <form @submit.prevent="createContact">
+          <div class="form-group">
+            <label for="name" >Имя</label>
+            <input type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter name" v-model="form.name">
+            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+          </div>
+          <div class="form-group">
+            <label for="phone">Телефон</label>
+            <input type="phone" class="form-control" id="phone" placeholder="Phone number" v-model="form.phone">
+          </div>
+          <button type="submit" class="btn btn-primary" :disabled="!canCreate">Отправить</button>
+        </form>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-sm-12">
+        <div class="wrapper" v-if="contacts.length">
+          <div class="card  mb-2" v-for="contact in contacts" >
+            <div class="card-body">
+              <div class="card-title" :style="{color: contact.marked ? 'red' : 'black'}">
+                {{contact.name}}
+              </div>
+              <p>{{contact.phone}}</p>
+              <button type="button" class="btn btn-primary" @click="markContact(contact.id)">Отменить</button>
+              <button type="button" class="btn btn-danger" @click="deleteContact(contact.id)">Удалить</button>
+  
+            </div>
+          </div>
+        </div>
+        <p v-else>
+          There is no any card here.
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  
+
+  <script type="module" src="./client/frontend.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="../node_modules/shards-ui/dist/js/shards.min.js"></script>
+</body>
+</html>

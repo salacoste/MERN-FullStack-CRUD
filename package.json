@@ -1,0 +1,29 @@
+{
+  "name": "mern-fullstack-crud",
+  "version": "1.0.0",
+  "description": "MERN api JS",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/salacoste/MERN-FullStack-CRUD.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/salacoste/MERN-FullStack-CRUD/issues"
+  },
+  "homepage": "https://github.com/salacoste/MERN-FullStack-CRUD#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "shards-ui": "^3.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
