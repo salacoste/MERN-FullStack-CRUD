@@ -36,7 +36,11 @@
     </div>
     <div class="row mt-4">
       <div class="col-sm-12">
-        <div class="wrapper" v-if="contacts.length">
+        <template v-if="loading">
+          22
+          <!-- <loader /> -->
+        </template>
+        <div class="wrapper" v-else-if="contacts.length">
           <div class="card  mb-2" v-for="contact in contacts" >
             <div class="card-body">
               <div class="card-title" :style="{color: contact.marked ? 'red' : 'black'}">
