@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/salacoste/MERN-FullStack-CRUD#readme",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "shards-ui": "^3.0.0",
     "uuid": "^8.1.0"
   },
